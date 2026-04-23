@@ -1,0 +1,30 @@
+class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        encoded =''
+        for i in strs:
+            encoded += str(len(i)) + '#' + i
+        return encoded
+
+
+    def decode(self, s: str) -> List[str]:
+        decoded = []
+        i=0
+        while i<len(s):
+            j=i
+            while s[j]!='#':
+
+                j=j+1
+        
+            length = int(s[i:j])
+            start = j+1 
+            end =start + length 
+            string_content = s[start:end]
+            decoded.append(string_content)
+
+            i=end 
+
+        return decoded 
+
+            
+
